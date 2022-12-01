@@ -1,11 +1,51 @@
+---
+const pageTitle = "About";
+
+const about = {
+  firstName: "Koushil",
+  lastName: "Mankali",
+  job: "ITalentDigital",
+  hobbies: ["Exploring javascript", "watching movies"],
+  experience: 1,
+};
+
+const skills = [
+  "HTML5",
+  "CSS3",
+  "JavaScript",
+  "React",
+  "NodeJs",
+  "MongoDB",
+  "ExpressJs",
+];
+
+const experienced = true;
+---
+
 <html>
   <head>
-    <title>About</title>
+    <title>{pageTitle}</title>
   </head>
   <body>
     <a href="/">Home</a>
     <a href="/about">About Us</a>
     <a href="/blog">Blog</a>
-    <h1>About page</h1>
+    <h1>{pageTitle} page</h1>
+
+    <p>Hi, I'am {about.firstName} {about.lastName},</p>
+    <p>
+      I work as a Software Engineer @ {about.job} and my hobbies are {
+        about.hobbies[0]
+      } and {about.hobbies[1]}.
+    </p>
+    <p>My Skills: {skills?.map((skill) => <p>{skill}</p>)}</p>
+    <p>Experienced: {experienced && "Yes"}</p>
+    <p>
+      {
+        experienced
+          ? `I have ${about.experience}+ year's of experience`
+          : "I am a fresher."
+      }
+    </p>
   </body>
 </html>
