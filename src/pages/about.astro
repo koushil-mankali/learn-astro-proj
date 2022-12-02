@@ -1,6 +1,5 @@
 ---
-import Navigation from "../components/Navigation.astro";
-import Footer from "../components/Footer.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
 
 const pageTitle = "About";
 
@@ -31,7 +30,6 @@ const backGroundcolor = "crimson";
 
 <html>
   <head>
-    <title>{pageTitle}</title>
     <style
       define:vars={{
         pageTitleCssfontSize,
@@ -49,10 +47,7 @@ const backGroundcolor = "crimson";
     </style>
   </head>
   <body>
-    <Navigation />
-    <div class="bodyDiv">
-      <h1 class="pageTitle">{pageTitle} page</h1>
-
+    <BaseLayout pageTitle={pageTitle}>
       <p>Hi, I'am {about.firstName} {about.lastName},</p>
       <p>
         I work as a Software Engineer @ {about.job} and my hobbies are {
@@ -68,7 +63,6 @@ const backGroundcolor = "crimson";
             : "I am a fresher."
         }
       </p>
-    </div>
-    <Footer />
+    </BaseLayout>
   </body>
 </html>

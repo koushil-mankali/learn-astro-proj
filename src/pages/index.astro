@@ -1,17 +1,11 @@
 ---
-import Navigation from "../components/Navigation.astro";
-import Footer from "../components/Footer.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
 
 const pageTitle = "Astro Learning Project";
 ---
 
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>{pageTitle}</title>
     <style>
       .box {
         width: 40%;
@@ -43,23 +37,12 @@ const pageTitle = "Astro Learning Project";
     </style>
   </head>
   <body>
-    <Navigation />
-    <div class="bodyDiv">
-      <h1
-        style="width: 100%;
-      font-size: 2rem;
-      font-weight: 700;
-      color: crimson;
-      background-color: yellowgreen;"
-      >
-        {pageTitle}
-      </h1>
+    <BaseLayout pageTitle={pageTitle}>
       <div class="box">
         <div class="content" id="content"></div>
         <button type="button" id="inptButton">Input</button>
       </div>
-    </div>
-    <Footer />
+    </BaseLayout>
     <script>
       import "../scripts/promotScript.js";
     </script>
