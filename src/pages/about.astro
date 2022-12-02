@@ -20,17 +20,54 @@ const skills = [
 ];
 
 const experienced = true;
+const pageTitleCssColor = "white";
+const pageTitleCssfontSize = "3rem";
+const pageTitleCssfontWeight = 700;
+const backGroundcolor = "crimson";
 ---
 
 <html>
   <head>
     <title>{pageTitle}</title>
+    <style
+      define:vars={{
+        pageTitleCssfontSize,
+        pageTitleCssColor,
+        pageTitleCssfontWeight,
+        backGroundcolor,
+      }}
+    >
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .navbar {
+        width: 100%;
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+        background-color: goldenrod;
+        color: beige;
+        font-size: 1.1rem;
+        font-weight: 600;
+        padding: 1rem;
+      }
+      .pageTitle {
+        color: var(--pageTitleCssColor);
+        font-size: var(--pageTitleCssfontSize);
+        font-weight: var(--pageTitleCssfontWeight);
+        background-color: var(--backGroundcolor);
+      }
+    </style>
   </head>
   <body>
-    <a href="/">Home</a>
-    <a href="/about">About Us</a>
-    <a href="/blog">Blog</a>
-    <h1>{pageTitle} page</h1>
+    <navbar class="navbar">
+      <a href="/" class="navItem">Home</a>
+      <a href="/about" class="navItem">About Us</a>
+      <a href="/blog" class="navItem">Blog</a>
+    </navbar>
+    <h1 class="pageTitle">{pageTitle} page</h1>
 
     <p>Hi, I'am {about.firstName} {about.lastName},</p>
     <p>

@@ -3,11 +3,33 @@ const pageTitle = "Blog";
 ---
 
 <html>
-  <head><title>{pageTitle}</title></head>
+  <head
+    ><title>{pageTitle}</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .navbar {
+        width: 100%;
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+        background-color: goldenrod;
+        color: beige;
+        font-size: 1.1rem;
+        font-weight: 600;
+        padding: 1rem;
+      }
+    </style>
+  </head>
   <body>
-    <a href="/">Home</a>
-    <a href="/about">About Us</a>
-    <a href="/blog">Blog</a>
+    <navbar class="navbar">
+      <a href="/" class="navItem">Home</a>
+      <a href="/about" class="navItem">About Us</a>
+      <a href="/blog" class="navItem">Blog</a>
+    </navbar>
     <h1>{pageTitle} Page</h1>
 
     <h4>Posts:</h4>

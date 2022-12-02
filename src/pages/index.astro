@@ -9,11 +9,39 @@ const pageTitle = "Astro Learning Project";
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <title>{pageTitle}</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .navbar {
+        width: 100%;
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+        background-color: goldenrod;
+        color: beige;
+        font-size: 1.1rem;
+        font-weight: 600;
+        padding: 1rem;
+      }
+    </style>
   </head>
   <body>
-    <a href="/">Home</a>
-    <a href="/about">About Us</a>
-    <a href="/blog">Blog</a>
-    <h1>{pageTitle}</h1>
+    <navbar class="navbar">
+      <a href="/" class="navItem">Home</a>
+      <a href="/about" class="navItem">About Us</a>
+      <a href="/blog" class="navItem">Blog</a>
+    </navbar>
+    <h1
+      style="width: 100%;
+    font-size: 2rem;
+    font-weight: 700;
+    color: crimson;
+    background-color: yellowgreen;"
+    >
+      {pageTitle}
+    </h1>
   </body>
 </html>
