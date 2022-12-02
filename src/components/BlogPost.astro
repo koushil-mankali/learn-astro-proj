@@ -1,0 +1,37 @@
+---
+const allPosts = await Astro.glob("../pages/posts/*.md");
+---
+
+<div class="navbar">
+  {
+    allPosts?.map((item) => {
+      return (
+        <a target="_blank" href={item.url} class="anchor">
+          {item.frontmatter.title}
+        </a>
+      );
+    })
+  }
+</div>
+
+<style>
+  .navbar {
+    width: 100%;
+    height: max-content;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: white;
+  }
+  .anchor {
+    width: 100%;
+    padding: 0.5rem;
+    font-size: 1rem;
+    font-weight: 700;
+    text-decoration: none;
+    border: 1px solid wheat;
+  }
+  .anchor:hover {
+    color: white;
+    background-color: darkcyan;
+  }
+</style>
