@@ -2,13 +2,15 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import BlogPost from "../components/BlogPost.astro";
 
+const allPosts = await Astro.glob("./posts/*.md");
+
 const pageTitle = "Blog";
 ---
 
 <html>
   <body>
     <BaseLayout pageTitle={pageTitle}>
-      <BlogPost />
+      <BlogPost allPosts={allPosts} />
     </BaseLayout>
   </body>
 </html>
