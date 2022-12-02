@@ -14,5 +14,46 @@ const { frontmatter } = Astro.props;
       Published on: <strong>{frontmatter.pubDate?.slice(0, 10)}</strong>
     </p>
     <slot />
+    <div class="tags">
+      <h2>Tags:</h2>
+      {
+        frontmatter.tags?.map((tag: String) => {
+          return (
+            <a class="tag" href={`/tags/${tag}`}>
+              {tag}
+            </a>
+          );
+        })
+      }
+    </div>
   </div>
 </BaseLayout>
+
+<style>
+  .tags {
+    width: 100%;
+    margin: 1rem 0;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: yellow;
+  }
+
+  .tag {
+    width: max-content;
+    height: max-content;
+    padding: 0.5rem;
+    margin: 0.5rem;
+    text-decoration: none;
+    font-size: 1.1rem;
+    text-transform: capitalize;
+    color: palevioletred;
+    background-color: honeydew;
+    border: 1px solid crimson;
+  }
+
+  .tag:hover {
+    color: white;
+    background-color: cadetblue;
+  }
+</style>
