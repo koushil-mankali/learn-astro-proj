@@ -12,6 +12,35 @@ const pageTitle = "Astro Learning Project";
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <title>{pageTitle}</title>
+    <style>
+      .box {
+        width: 40%;
+        height: max-content;
+        margin: 2rem auto;
+        padding: 1rem;
+        border: 1px solid crimson;
+        border-radius: 10px;
+        box-shadow: 1px 1px 1px #eee;
+        background-color: aquamarine;
+        color: orange;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .content {
+        width: 100%;
+        padding: 1rem;
+        background-color: white;
+      }
+
+      button {
+        padding: 0.5rem;
+        border: 1px solid grey;
+        background-color: wheat;
+        cursor: pointer;
+      }
+    </style>
   </head>
   <body>
     <Navigation />
@@ -25,7 +54,14 @@ const pageTitle = "Astro Learning Project";
       >
         {pageTitle}
       </h1>
+      <div class="box">
+        <div class="content" id="content"></div>
+        <button type="button" id="inptButton">Input</button>
+      </div>
     </div>
     <Footer />
+    <script>
+      import "../scripts/promotScript.js";
+    </script>
   </body>
 </html>
