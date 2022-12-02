@@ -1,0 +1,19 @@
+---
+const { platform, username } = Astro.props;
+---
+
+<a target="_blank" href={`https://${platform}.com/${username}`}
+  >{platform?.toUpperCase()}</a
+>
+
+<style>
+  a {
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    background-color: darkgray;
+    color: yellow;
+    border: 1px solid gold;
+    font-size: 1.1rem;
+    font-weight: 800;
+  }
+</style>

@@ -1,0 +1,57 @@
+---
+import Social from "../components/Social.astro";
+
+const socialLinks = [
+  { platform: "github", username: "koushil-mankali" },
+  { platform: "linkedin", username: "koushil-mankali" },
+  { platform: "facebook", username: "koushil-mankali" },
+  { platform: "koo", username: "koushil-mankali" },
+];
+---
+
+<footer>
+  <div class="devLink">
+    Developed by <a class="anchor" href="https://www.koushilmankali.com"
+      >Koushil Mankali</a
+    >
+  </div>
+  <div class="socialLink">
+    {
+      socialLinks?.map((item) => {
+        return <Social platform={item.platform} username={item.username} />;
+      })
+    }
+  </div>
+</footer>
+
+<style>
+  footer {
+    width: 100%;
+    height: 10rem;
+    background-color: crimson;
+    color: whitesmoke;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .devLink {
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
+
+  .anchor {
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: goldenrod;
+  }
+
+  .socialLink {
+    margin: 2rem 0;
+    display: flex;
+    gap: 1rem;
+  }
+</style>

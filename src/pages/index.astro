@@ -1,5 +1,7 @@
 ---
-import "./styles/global.css";
+import Navigation from "../components/Navigation.astro";
+import Footer from "../components/Footer.astro";
+
 const pageTitle = "Astro Learning Project";
 ---
 
@@ -10,22 +12,20 @@ const pageTitle = "Astro Learning Project";
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <title>{pageTitle}</title>
-    <style></style>
   </head>
   <body>
-    <navbar class="navbar">
-      <a href="/" class="navItem">Home</a>
-      <a href="/about" class="navItem">About Us</a>
-      <a href="/blog" class="navItem">Blog</a>
-    </navbar>
-    <h1
-      style="width: 100%;
-    font-size: 2rem;
-    font-weight: 700;
-    color: crimson;
-    background-color: yellowgreen;"
-    >
-      {pageTitle}
-    </h1>
+    <Navigation />
+    <div class="bodyDiv">
+      <h1
+        style="width: 100%;
+      font-size: 2rem;
+      font-weight: 700;
+      color: crimson;
+      background-color: yellowgreen;"
+      >
+        {pageTitle}
+      </h1>
+    </div>
+    <Footer />
   </body>
 </html>

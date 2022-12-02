@@ -1,5 +1,6 @@
 ---
-import "./styles/global.css";
+import Navigation from "../components/Navigation.astro";
+import Footer from "../components/Footer.astro";
 
 const pageTitle = "About";
 
@@ -48,27 +49,26 @@ const backGroundcolor = "crimson";
     </style>
   </head>
   <body>
-    <navbar class="navbar">
-      <a href="/" class="navItem">Home</a>
-      <a href="/about" class="navItem">About Us</a>
-      <a href="/blog" class="navItem">Blog</a>
-    </navbar>
-    <h1 class="pageTitle">{pageTitle} page</h1>
+    <Navigation />
+    <div class="bodyDiv">
+      <h1 class="pageTitle">{pageTitle} page</h1>
 
-    <p>Hi, I'am {about.firstName} {about.lastName},</p>
-    <p>
-      I work as a Software Engineer @ {about.job} and my hobbies are {
-        about.hobbies[0]
-      } and {about.hobbies[1]}.
-    </p>
-    <p>My Skills: {skills?.map((skill) => <p>{skill}</p>)}</p>
-    <p>Experienced: {experienced && "Yes"}</p>
-    <p>
-      {
-        experienced
-          ? `I have ${about.experience}+ year's of experience`
-          : "I am a fresher."
-      }
-    </p>
+      <p>Hi, I'am {about.firstName} {about.lastName},</p>
+      <p>
+        I work as a Software Engineer @ {about.job} and my hobbies are {
+          about.hobbies[0]
+        } and {about.hobbies[1]}.
+      </p>
+      <p>My Skills: {skills?.map((skill) => <p>{skill}</p>)}</p>
+      <p>Experienced: {experienced && "Yes"}</p>
+      <p>
+        {
+          experienced
+            ? `I have ${about.experience}+ year's of experience`
+            : "I am a fresher."
+        }
+      </p>
+    </div>
+    <Footer />
   </body>
 </html>
