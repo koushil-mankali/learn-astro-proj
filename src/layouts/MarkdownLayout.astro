@@ -1,0 +1,17 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+import BlogPostsNavbar from "../components/BlogPostsNavbar.astro";
+const { frontmatter } = Astro.props;
+---
+
+<BaseLayout>
+  <div>
+    <BlogPostsNavbar />
+    <hr />
+    <h1>{frontmatter.title}</h1>
+    <p style="margin: 1rem 0;">
+      Published on: <strong>{frontmatter.pubDate?.slice(0, 10)}</strong>
+    </p>
+    <slot />
+  </div>
+</BaseLayout>
