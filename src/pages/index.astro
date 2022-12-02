@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import Greetings from "../components/Greetings.jsx";
 
 const pageTitle = "Astro Learning Project";
 ---
@@ -34,6 +35,15 @@ const pageTitle = "Astro Learning Project";
         background-color: wheat;
         cursor: pointer;
       }
+
+      .box2 {
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: red;
+      }
     </style>
   </head>
   <body>
@@ -41,6 +51,9 @@ const pageTitle = "Astro Learning Project";
       <div class="box">
         <div class="content" id="content"></div>
         <button type="button" id="inptButton">Input</button>
+      </div>
+      <div class="box2">
+        <Greetings messages={["Namaste", "Hi", "Hello"]} client:load />
       </div>
     </BaseLayout>
     <script>
